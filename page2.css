@@ -1,0 +1,163 @@
+body{
+    background-color: #FFFFF0;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+    
+
+.credits {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 80%;
+    max-width: 800px;
+
+    text-align: center;
+    color: #FFB6C1;
+    font-size: 24px;
+    line-height: 1.8;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: none;
+    font-family: Caveat sans-serif;
+    white-space: pre-line;
+
+    animation: scroll 60s linear forwards;
+}
+
+@keyframes scroll {
+    from {
+        transform: translate(-50%, 100vh);
+    }
+
+    to {
+        transform: translate(-50%, -100%);
+    }
+}
+.credits {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    transform: translateX(-50%);
+    animation: scroll 100s linear forwards;
+}
+
+@keyframes scroll {
+    from {
+        top: 100vh;
+    }
+    to {
+        top: -10000px;
+    }
+}
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.controls button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #FFB6C1;
+    color: white;
+    cursor: pointer;
+}
+.music-control {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 1000;
+}
+
+.music-control button {
+    background: rgba(255, 255, 255, 0.15);
+    color: rgb(3, 3, 3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    padding: 12px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.music-control button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+/* Центральное видео */
+.video-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 500px;
+    height: 800px;
+
+    border-radius: 25px;
+    overflow: hidden;
+
+    opacity: 0.65;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Левое и правое видео */
+.video-side {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 500px;
+    height: 800px;
+
+    border-radius: 22px;
+    overflow: hidden;
+
+    opacity: 0.45;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Положение левого видео */
+.video-side.left {
+    left: 5%;
+}
+
+/* Положение правого видео */
+.video-side.right {
+    right: 5%;
+}
+
+/* Настройки видео внутри карточек */
+.video-card video,
+.video-side video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Титры поверх всех видео */
+.credits {
+    z-index: 1;
+}
